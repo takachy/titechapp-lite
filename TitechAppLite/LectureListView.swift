@@ -24,13 +24,13 @@ struct Lecture: Identifiable{
 
 struct LectureListView: View {
     var body: some View {
-        NavigationView{
-            List{
-                ForEach(0..<10){_ in
+        NavigationView {
+            List {
+                ForEach(0..<10) { _ in
                     LectureRow()
                 }.listRowInsets(EdgeInsets())
             }
-        .navigationBarTitle("スケジュール")
+            .navigationBarTitle("スケジュール")
             
         }
     }

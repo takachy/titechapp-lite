@@ -11,11 +11,11 @@ import SwiftUI
 struct LectureRow: View {
     
     var body: some View {
-        HStack{
+        HStack {
             Rectangle()
                 .fill(Color("main"))
                 .frame(width:5, height: 100)
-            VStack(alignment: .leading, spacing: 24){
+            VStack(alignment: .leading, spacing: 24) {
                 Text("08:50")
                     .font(.system(size: 13))
                     .foregroundColor(Color("textMain"))
@@ -23,10 +23,9 @@ struct LectureRow: View {
                 Text("10:30")
                     .font(.system(size: 13))
                     .foregroundColor(Color("textSub"))
-
             }
 
-            VStack(alignment: .leading, spacing: 24){
+            VStack(alignment: .leading, spacing: 24) {
                 Text("電磁気学aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
                     .lineLimit(1)
                     .font(.system(size: 15))
@@ -43,9 +42,7 @@ struct LectureRow: View {
                 .font(.system(size: 14))
                 .foregroundColor(Color("main"))
                 .frame(width:44)
-            .padding()
-            
-            
+                .padding()
         }
     }
 }
