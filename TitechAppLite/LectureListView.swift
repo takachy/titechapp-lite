@@ -9,19 +9,6 @@
 import SwiftUI
 import Combine
 
-struct Lecture: Identifiable{
-    var id: ObjectIdentifier
-    
-    struct Time: Decodable{
-        let start: String
-        let end: String
-    }
-    let name: String
-    let room: String
-    let content: String
-    let time: Time
-}
-
 struct LectureListView: View {
     var body: some View {
         NavigationView {
