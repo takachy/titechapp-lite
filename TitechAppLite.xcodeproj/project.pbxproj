@@ -14,6 +14,7 @@
 		D1543663250364890073AC37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1543661250364890073AC37 /* LaunchScreen.storyboard */; };
 		D154366B250367A90073AC37 /* LectureListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D154366A250367A90073AC37 /* LectureListView.swift */; };
 		D154367025036C480073AC37 /* LectureRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D154366F25036C480073AC37 /* LectureRow.swift */; };
+		D1B0B8A2251F20F7007A0413 /* LectureHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B0B8A1251F20F7007A0413 /* LectureHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		D1543664250364890073AC37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D154366A250367A90073AC37 /* LectureListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureListView.swift; sourceTree = "<group>"; };
 		D154366F25036C480073AC37 /* LectureRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureRow.swift; sourceTree = "<group>"; };
+		D1B0B8A1251F20F7007A0413 /* LectureHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LectureHeader.swift; path = TitechAppLite/LectureHeader.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				D1543664250364890073AC37 /* Info.plist */,
 				D154365E250364890073AC37 /* Preview Content */,
 				D154366A250367A90073AC37 /* LectureListView.swift */,
+				D1B0B8A1251F20F7007A0413 /* LectureHeader.swift */,
 				D154366F25036C480073AC37 /* LectureRow.swift */,
 			);
 			path = TitechAppLite;
@@ -152,6 +155,7 @@
 				D1543657250364860073AC37 /* AppDelegate.swift in Sources */,
 				D1543659250364860073AC37 /* SceneDelegate.swift in Sources */,
 				D154367025036C480073AC37 /* LectureRow.swift in Sources */,
+				D1B0B8A2251F20F7007A0413 /* LectureHeader.swift in Sources */,
 				D154366B250367A90073AC37 /* LectureListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
