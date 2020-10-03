@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D14B1319252852CD0006A30A /* LectureHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14B1318252852CD0006A30A /* LectureHeader.swift */; };
 		D1543657250364860073AC37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1543656250364860073AC37 /* AppDelegate.swift */; };
 		D1543659250364860073AC37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1543658250364860073AC37 /* SceneDelegate.swift */; };
 		D154365D250364890073AC37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D154365C250364890073AC37 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D14B1318252852CD0006A30A /* LectureHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LectureHeader.swift; path = TitechAppLite/LectureHeader.swift; sourceTree = SOURCE_ROOT; };
 		D1543653250364860073AC37 /* TitechAppLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TitechAppLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1543656250364860073AC37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1543658250364860073AC37 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				D1543664250364890073AC37 /* Info.plist */,
 				D154365E250364890073AC37 /* Preview Content */,
 				D154366A250367A90073AC37 /* LectureListView.swift */,
+				D14B1318252852CD0006A30A /* LectureHeader.swift */,
 				D154366F25036C480073AC37 /* LectureRow.swift */,
 			);
 			path = TitechAppLite;
@@ -152,6 +155,7 @@
 				D1543657250364860073AC37 /* AppDelegate.swift in Sources */,
 				D1543659250364860073AC37 /* SceneDelegate.swift in Sources */,
 				D154367025036C480073AC37 /* LectureRow.swift in Sources */,
+				D14B1319252852CD0006A30A /* LectureHeader.swift in Sources */,
 				D154366B250367A90073AC37 /* LectureListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
