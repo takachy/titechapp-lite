@@ -10,20 +10,20 @@ import SwiftUI
 import Combine
 
 struct LectureListView: View {
+    @ObservedObject var viewModel = LectureViewModel()
+    
     var body: some View {
         NavigationView {
             List {
-                ForEach(0..<10) { _ in
-                    Section(header: LectureHeader()){
-                        ForEach(0..<2) { _ in
-                            LectureRow()
+                ForEach(viewModel.plans) { plan in
+                    Section(header: LectureHeader(date: plan.date)) {
+                        ForEach(plan.lectures) { lecture in
+                            LectureRow(lecture: lecture)
                         }
                     }
-
                 }.listRowInsets(EdgeInsets())
             }
             .navigationBarTitle("スケジュール")
-            
         }
     }
 }

@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct LectureRow: View {
+    let lecture: LectureData
     
     var body: some View {
         HStack {
@@ -16,28 +17,28 @@ struct LectureRow: View {
                 .fill(Color("main"))
                 .frame(width:5, height: 100)
             VStack(alignment: .leading, spacing: 24) {
-                Text("08:50")
+                Text(lecture.time.start)
                     .font(.system(size: 13))
                     .foregroundColor(Color("textMain"))
                     
-                Text("10:30")
+                Text(lecture.time.end)
                     .font(.system(size: 13))
                     .foregroundColor(Color("textSub"))
             }
 
             VStack(alignment: .leading, spacing: 24) {
-                Text("電磁気学aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+                Text(lecture.name)
                     .lineLimit(1)
                     .font(.system(size: 15))
                     .foregroundColor(Color("textMain"))
                     
-                Text("Week1 Descriptionaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+                Text(lecture.content)
                     .lineLimit(1)
                     .font(.system(size: 13))
                     .foregroundColor(Color("textSub"))
             }
             Spacer()
-            Text("W222aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+            Text(lecture.room)
                 .lineLimit(2)
                 .font(.system(size: 14))
                 .foregroundColor(Color("main"))
@@ -49,6 +50,12 @@ struct LectureRow: View {
 
 struct LectureRow_Previews: PreviewProvider {
     static var previews: some View {
-        LectureRow()
+        LectureRow(lecture: LectureData(
+                    id: "bbb",
+                    name: "立志プロジェクト",
+                    time: LectureData.Times(start: "8:50", end: "10:30"),
+                    content: "ガイダンス",
+                    room: "70周年記念講堂")
+        )
     }
 }
