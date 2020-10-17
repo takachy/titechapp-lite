@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D14B1319252852CD0006A30A /* LectureHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14B1318252852CD0006A30A /* LectureHeader.swift */; };
+		D14B132725285A270006A30A /* LectureData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14B132625285A270006A30A /* LectureData.swift */; };
 		D1543657250364860073AC37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1543656250364860073AC37 /* AppDelegate.swift */; };
 		D1543659250364860073AC37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1543658250364860073AC37 /* SceneDelegate.swift */; };
 		D154365D250364890073AC37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D154365C250364890073AC37 /* Assets.xcassets */; };
@@ -15,10 +16,13 @@
 		D1543663250364890073AC37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1543661250364890073AC37 /* LaunchScreen.storyboard */; };
 		D154366B250367A90073AC37 /* LectureListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D154366A250367A90073AC37 /* LectureListView.swift */; };
 		D154367025036C480073AC37 /* LectureRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D154366F25036C480073AC37 /* LectureRow.swift */; };
+		D17940802528745200017467 /* LectureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D179407F2528745200017467 /* LectureViewModel.swift */; };
+		D18BE20C25285F670008432C /* LectureTestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18BE20B25285F670008432C /* LectureTestData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D14B1318252852CD0006A30A /* LectureHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LectureHeader.swift; path = TitechAppLite/LectureHeader.swift; sourceTree = SOURCE_ROOT; };
+		D14B1318252852CD0006A30A /* LectureHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LectureHeader.swift; path = TitechAppLite/View/LectureHeader.swift; sourceTree = SOURCE_ROOT; };
+		D14B132625285A270006A30A /* LectureData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureData.swift; sourceTree = "<group>"; };
 		D1543653250364860073AC37 /* TitechAppLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TitechAppLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1543656250364860073AC37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1543658250364860073AC37 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +32,8 @@
 		D1543664250364890073AC37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D154366A250367A90073AC37 /* LectureListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureListView.swift; sourceTree = "<group>"; };
 		D154366F25036C480073AC37 /* LectureRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureRow.swift; sourceTree = "<group>"; };
+		D179407F2528745200017467 /* LectureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureViewModel.swift; sourceTree = "<group>"; };
+		D18BE20B25285F670008432C /* LectureTestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureTestData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,15 +66,15 @@
 		D1543655250364860073AC37 /* TitechAppLite */ = {
 			isa = PBXGroup;
 			children = (
+				D1794083252874AD00017467 /* ViewModel */,
 				D1543656250364860073AC37 /* AppDelegate.swift */,
 				D1543658250364860073AC37 /* SceneDelegate.swift */,
 				D154365C250364890073AC37 /* Assets.xcassets */,
 				D1543661250364890073AC37 /* LaunchScreen.storyboard */,
 				D1543664250364890073AC37 /* Info.plist */,
 				D154365E250364890073AC37 /* Preview Content */,
-				D154366A250367A90073AC37 /* LectureListView.swift */,
-				D14B1318252852CD0006A30A /* LectureHeader.swift */,
-				D154366F25036C480073AC37 /* LectureRow.swift */,
+				D18BE20F252861FE0008432C /* Model */,
+				D18BE20E252861A10008432C /* View */,
 			);
 			path = TitechAppLite;
 			sourceTree = "<group>";
@@ -79,6 +85,33 @@
 				D154365F250364890073AC37 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D1794083252874AD00017467 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D179407F2528745200017467 /* LectureViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D18BE20E252861A10008432C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D154366A250367A90073AC37 /* LectureListView.swift */,
+				D154366F25036C480073AC37 /* LectureRow.swift */,
+				D14B1318252852CD0006A30A /* LectureHeader.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D18BE20F252861FE0008432C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D18BE20B25285F670008432C /* LectureTestData.swift */,
+				D14B132625285A270006A30A /* LectureData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,7 +186,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1543657250364860073AC37 /* AppDelegate.swift in Sources */,
+				D17940802528745200017467 /* LectureViewModel.swift in Sources */,
 				D1543659250364860073AC37 /* SceneDelegate.swift in Sources */,
+				D14B132725285A270006A30A /* LectureData.swift in Sources */,
+				D18BE20C25285F670008432C /* LectureTestData.swift in Sources */,
 				D154367025036C480073AC37 /* LectureRow.swift in Sources */,
 				D14B1319252852CD0006A30A /* LectureHeader.swift in Sources */,
 				D154366B250367A90073AC37 /* LectureListView.swift in Sources */,

@@ -9,12 +9,14 @@
 import SwiftUI
 
 struct LectureHeader: View {
+    let date: LectureDate
+    
     var body: some View {
         HStack {
             Rectangle()
                 .fill(Color("grayMain"))
                 .frame(width:5, height: 55)
-            Text("7月18日 木曜日")
+            Text("\(date.month)月\(date.day)日\(date.dayOfWeek)曜日")
                 .font(.system(size: 13))
                 .foregroundColor(Color("textSub"))
             Spacer()
@@ -24,6 +26,12 @@ struct LectureHeader: View {
 
 struct LectureHeader_Previews: PreviewProvider {
     static var previews: some View {
-        LectureHeader().previewLayout(.sizeThatFits)
+        LectureHeader(
+            date: LectureDate(
+                month: 10,
+                day: 2,
+                dayOfWeek: "土"
+            )
+        ).previewLayout(.sizeThatFits)
     }
 }
