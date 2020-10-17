@@ -28,7 +28,6 @@ struct LectureHeader_Previews: PreviewProvider {
     static var previews: some View {
         LectureHeader(
             date: LectureDate(
-                id: "aaa",
                 month: 10,
                 day: 2,
                 dayOfWeek: "土"

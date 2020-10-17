@@ -22,9 +22,7 @@ struct LectureData: Identifiable {
     let room: String
 }
 
-struct LectureDate: Identifiable {
-    let id: String
-    
+struct LectureDate {
     let month: Int
     let day: Int
     let dayOfWeek: String

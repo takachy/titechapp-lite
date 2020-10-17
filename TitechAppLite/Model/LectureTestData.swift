@@ -12,7 +12,7 @@ struct LectureTestData {
     let plans: [Plan] = [
         Plan(
             id: "i",
-            date: LectureDate(id: "ccc", month: 10, day: 2, dayOfWeek: "土"),
+            date: LectureDate(month: 10, day: 2, dayOfWeek: "土"),
             lectures: [
                 LectureData(
                     id: "ddd",
@@ -32,12 +32,12 @@ struct LectureTestData {
         ),
         Plan(
             id: "j",
-            date: LectureDate(id: "fff", month: 10, day: 3, dayOfWeek: "日"),
+            date: LectureDate(month: 10, day: 3, dayOfWeek: "日"),
             lectures: []
         ),
         Plan(
             id: "k",
-            date: LectureDate(id: "ggg", month: 10, day: 4, dayOfWeek: "月"),
+            date: LectureDate(month: 10, day: 4, dayOfWeek: "月"),
             lectures: [
                 LectureData(
                     id: "hhh",
