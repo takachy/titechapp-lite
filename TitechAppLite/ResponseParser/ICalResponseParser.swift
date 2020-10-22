@@ -33,25 +33,11 @@ struct ICalResponseParser {
         for line in splitICalString { // iCalデータを1行ずつ探索
             let splittedLine = line.components(separatedBy: ":")
             guard splittedLine.count > 1 else {
-              continue
+                continue
             }
 
             let tag = splittedLine[0]
             let content = splittedLine[1]
-//            var getTag = false
-//            for s in line { // 1文字ずつデータの確認
-//                if getTag == false { // tagが確定する前
-//                    if s == ":"{
-//                        getTag = true
-//                    }
-//                    else {
-//                        tag = tag + String(s)
-//                    }
-//                }
-//                else { // tagが確定した後
-//                    content = content + String(s)
-//                }
-//            }
             
             if veventFlag == false { // VEVENTの外
                 if tag == "BEGIN" && content == "VEVENT" {
@@ -88,7 +74,6 @@ struct ICalResponseParser {
                 
             }
         }
-        print(icaldata[1])
         return icaldata
     }
 }
