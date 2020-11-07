@@ -22,15 +22,9 @@ struct LectureData: Identifiable {
     let room: String
 }
 
-struct LectureDate {
-    let month: Int
-    let day: Int
-    let dayOfWeek: String
-}
-
 struct Plan: Identifiable {
     let id: String
     
-    let date: LectureDate
-    let lectures: [LectureData]
+    let date: String
+    var lectures: [LectureData]
 }

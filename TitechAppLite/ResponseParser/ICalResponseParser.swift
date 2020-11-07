@@ -10,8 +10,8 @@ import Foundation
 
 struct ICalData {
     var dtstamp : String
-    var dtstart : String
-    var dtend : String
+    var dtstart : Date
+    var dtend : Date
     var location : String
     var description : String
     var summary : String
@@ -29,7 +29,7 @@ struct ICalResponseParser {
         
         let splitICalString = icalstring.components(separatedBy: "\n")
         var veventFlag = false
-        var veventData = ICalData(dtstamp: "", dtstart: "", dtend: "", location: "", description: "", summary: "", uid: "", transp: "")
+        var veventData = ICalData(dtstamp: "", dtstart: Date(), dtend: Date(), location: "", description: "", summary: "", uid: "", transp: "")
         for line in splitICalString { // iCalデータを1行ずつ探索
             let splittedLine = line.components(separatedBy: ":")
             guard splittedLine.count > 1 else {
@@ -49,9 +49,15 @@ struct ICalResponseParser {
                 case "DTSTAMP":
                     veventData.dtstamp = content
                 case "DTSTART;TZID=Asia/Tokyo":
-                    veventData.dtstart = content
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.timeZone = TimeZone(identifier: "Asia/Tokyo")
+                    dateFormatter.dateFormat = "yyyyMMdd'T'HHmmss"
+                    veventData.dtstart = dateFormatter.date(from: content)!
                 case "DTEND;TZID=Asia/Tokyo":
-                    veventData.dtend = content
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.timeZone = TimeZone(identifier: "Asia/Tokyo")
+                    dateFormatter.dateFormat = "yyyyMMdd'T'HHmmss"
+                    veventData.dtend = dateFormatter.date(from: content)!
                 case "LOCATION":
                     veventData.location = content
                 case "DESCRIPTION":
