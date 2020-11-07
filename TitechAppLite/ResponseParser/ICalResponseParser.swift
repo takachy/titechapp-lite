@@ -29,7 +29,8 @@ struct ICalResponseParser {
         
         let splitICalString = icalstring.components(separatedBy: "\n")
         var veventFlag = false
-        var veventData = ICalData(dtstamp: "", dtstart: Date(), dtend: Date(), location: "", description: "", summary: "", uid: "", transp: "")
+        let initialDate = Date(timeIntervalSince1970: 0) // 1970/1/1
+        var veventData = ICalData(dtstamp: "", dtstart: initialDate, dtend: initialDate, location: "", description: "", summary: "", uid: "", transp: "")
         for line in splitICalString { // iCalデータを1行ずつ探索
             let splittedLine = line.components(separatedBy: ":")
             guard splittedLine.count > 1 else {
@@ -72,7 +73,7 @@ struct ICalResponseParser {
                     if content == "VEVENT"{
                         veventFlag = false
                         icaldata.append(veventData)
-                        
+                        veventData = ICalData(dtstamp: "", dtstart: initialDate, dtend: initialDate, location: "", description: "", summary: "", uid: "", transp: "")
                     }
                 default:
                     continue
