@@ -18,6 +18,7 @@
 		D154367025036C480073AC37 /* LectureRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D154366F25036C480073AC37 /* LectureRow.swift */; };
 		D17940802528745200017467 /* LectureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D179407F2528745200017467 /* LectureViewModel.swift */; };
 		D18BE20C25285F670008432C /* LectureTestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18BE20B25285F670008432C /* LectureTestData.swift */; };
+		D1D8ACF2253AC064003F4204 /* ICalResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D8ACF1253AC064003F4204 /* ICalResponseParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		D154366F25036C480073AC37 /* LectureRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureRow.swift; sourceTree = "<group>"; };
 		D179407F2528745200017467 /* LectureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureViewModel.swift; sourceTree = "<group>"; };
 		D18BE20B25285F670008432C /* LectureTestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureTestData.swift; sourceTree = "<group>"; };
+		D1D8ACF1253AC064003F4204 /* ICalResponseParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICalResponseParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 		D1543655250364860073AC37 /* TitechAppLite */ = {
 			isa = PBXGroup;
 			children = (
+				D1D8ACF0253AC029003F4204 /* ResponseParser */,
 				D1794083252874AD00017467 /* ViewModel */,
 				D1543656250364860073AC37 /* AppDelegate.swift */,
 				D1543658250364860073AC37 /* SceneDelegate.swift */,
@@ -114,6 +117,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		D1D8ACF0253AC029003F4204 /* ResponseParser */ = {
+			isa = PBXGroup;
+			children = (
+				D1D8ACF1253AC064003F4204 /* ICalResponseParser.swift */,
+			);
+			path = ResponseParser;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -141,7 +152,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1170;
-				LastUpgradeCheck = 1170;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = takachy;
 				TargetAttributes = {
 					D1543652250364860073AC37 = {
@@ -188,6 +199,7 @@
 				D1543657250364860073AC37 /* AppDelegate.swift in Sources */,
 				D17940802528745200017467 /* LectureViewModel.swift in Sources */,
 				D1543659250364860073AC37 /* SceneDelegate.swift in Sources */,
+				D1D8ACF2253AC064003F4204 /* ICalResponseParser.swift in Sources */,
 				D14B132725285A270006A30A /* LectureData.swift in Sources */,
 				D18BE20C25285F670008432C /* LectureTestData.swift in Sources */,
 				D154367025036C480073AC37 /* LectureRow.swift in Sources */,
@@ -236,6 +248,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -296,6 +309,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
