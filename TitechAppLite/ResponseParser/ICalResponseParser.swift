@@ -53,12 +53,12 @@ struct ICalResponseParser {
                     let dateFormatter = DateFormatter()
                     dateFormatter.timeZone = TimeZone(identifier: "Asia/Tokyo")
                     dateFormatter.dateFormat = "yyyyMMdd'T'HHmmss"
-                    veventData.dtstart = dateFormatter.date(from: content)!
+                    veventData.dtstart = dateFormatter.date(from: content) ?? initialDate
                 case "DTEND;TZID=Asia/Tokyo":
                     let dateFormatter = DateFormatter()
                     dateFormatter.timeZone = TimeZone(identifier: "Asia/Tokyo")
                     dateFormatter.dateFormat = "yyyyMMdd'T'HHmmss"
-                    veventData.dtend = dateFormatter.date(from: content)!
+                    veventData.dtend = dateFormatter.date(from: content) ?? initialDate
                 case "LOCATION":
                     veventData.location = content
                 case "DESCRIPTION":
