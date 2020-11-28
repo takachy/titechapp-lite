@@ -67,10 +67,6 @@ struct ScheduleTranslator {
             let content = lecture.description
             let room = lecture.location
             
-            if id == "" || name == "" || time.start == "" || time.end == "" || content == "" || room == "" {
-                continue
-            }
-            
             let LectureDetail = LectureData(id: id, name: name, time: time, content: content, room: room)
             
             let interval = calcDateRemainder(firstDate: lecture.dtstart, secondDate: today)

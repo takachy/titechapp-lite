@@ -71,8 +71,12 @@ struct ICalResponseParser {
                     veventData.transp = content
                 case "END": // VEVENT の終了を検出
                     if content == "VEVENT"{
+                        
+                        if veventData.dtstamp != "" && veventData.dtstart != initialDate && veventData.dtend != initialDate && veventData.location != "" && veventData.description != "" && veventData.summary != "" && veventData.uid != "" && veventData.transp != "" {
+                            icaldata.append(veventData)
+                        }
+                        
                         veventFlag = false
-                        icaldata.append(veventData)
                         veventData = ICalData(dtstamp: "", dtstart: initialDate, dtend: initialDate, location: "", description: "", summary: "", uid: "", transp: "")
                     }
                 default:
