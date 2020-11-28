@@ -23,11 +23,11 @@ struct ScheduleTranslator {
         return dateFormatter.string(from: data)
     }
     
-    static func setPlanList(today : Date) -> [Plan]{ // 日付と空の講義情報が入ったPlanの配列を生成
+    static func createPlanList(today : Date) -> [Plan]{ // 日付と空の講義情報が入ったPlanの配列を生成
         var planList : [Plan] = []
         for i in 0..<120 {
             let thisDay = Calendar.current.date(byAdding: .day, value: i, to: today)!
-            let thisDaysPlan = Plan(id: String(i), date: Date2LectureDate(data: thisDay), lectures: [])
+            let thisDaysPlan = Plan(date: Date2LectureDate(data: thisDay), lectures: [])
             planList.append(thisDaysPlan)
         }
         return planList
@@ -47,7 +47,7 @@ struct ScheduleTranslator {
     
     static func traslate(data: [ICalData]) -> [Plan] { // 実際に変換する関数
         let today = Date()
-        var planList : [Plan] = setPlanList(today: today)
+        var planList : [Plan] = createPlanList(today: today)
         
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "ja")

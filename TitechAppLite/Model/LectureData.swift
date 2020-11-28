@@ -22,9 +22,13 @@ struct LectureData: Identifiable {
     let room: String
 }
 
-struct Plan: Identifiable {
-    let id: String
-    
+struct Plan {
     let date: String
     var lectures: [LectureData]
+}
+
+extension Plan: Identifiable{
+    var id: String {
+        String(date)
+    }
 }
