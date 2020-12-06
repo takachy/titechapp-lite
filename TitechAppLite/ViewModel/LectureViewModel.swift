@@ -18,7 +18,8 @@ class LectureViewModel: ObservableObject {
         cancellable = APIClient().fetch(
             url: URL(string: "https://ocwi-mock.titech.app/ocwi/index.php?module=Ocwi&action=Webcal&iCalendarId=test")!
         )
-        .map {data in ScheduleTranslator.traslate(data: ICalResponseParser.parse(data: data))
+        .map {data in
+            ScheduleTranslator.traslate(data: ICalResponseParser.parse(data: data))
         }
         // おまじない, メインスレッドで受け取る
         .receive(on: DispatchQueue.main)
