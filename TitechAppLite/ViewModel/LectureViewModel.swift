@@ -10,5 +10,31 @@ import Foundation
 import Combine
 
 class LectureViewModel: ObservableObject {
-    @Published var plans: [Plan] = ScheduleTranslator.traslate(data: ICalResponseParser.parse(data: TestICalData.data(using: .utf8)!))
+    private var cancellable: AnyCancellable?
+    
+    @Published var plans: [Plan] = []
+    
+    func appear() {
+        cancellable = APIClient().fetch(
+            url: URL(string: "https://ocwi-mock.titech.app/ocwi/index.php?module=Ocwi&action=Webcal&iCalendarId=test")!
+        )
+        .map {data in
+            ScheduleTranslator.traslate(data: ICalResponseParser.parse(data: data))
+        }
+        // おまじない, メインスレッドで受け取る
+        .receive(on: DispatchQueue.main)
+        .sink(
+            receiveCompletion: { result in
+                switch result{
+                case .finished:
+                    break
+                case let .failure(error):
+                    print(error)
+                }
+            },
+            receiveValue: { plans in
+                self.plans = plans
+            }
+        )
+    }
 }

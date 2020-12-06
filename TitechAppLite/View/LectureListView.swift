@@ -25,6 +25,9 @@ struct LectureListView: View {
             }
             .navigationBarTitle("スケジュール")
         }
+        .onAppear(){
+            self.viewModel.appear()
+        }
     }
 }
 
