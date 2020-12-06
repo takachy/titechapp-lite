@@ -10,6 +10,5 @@ import Foundation
 import Combine
 
 class LectureViewModel: ObservableObject {
-    @Published var plans: [Plan] = LectureTestData().plans
-    
+    @Published var plans: [Plan] = ScheduleTranslator.traslate(data: ICalResponseParser.parse(data: TestICalData.data(using: .utf8)!))
 }

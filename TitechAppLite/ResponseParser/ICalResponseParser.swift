@@ -10,8 +10,8 @@ import Foundation
 
 struct ICalData {
     var dtstamp : String
-    var dtstart : String
-    var dtend : String
+    var dtstart : Date
+    var dtend : Date
     var location : String
     var description : String
     var summary : String
@@ -29,7 +29,8 @@ struct ICalResponseParser {
         
         let splitICalString = icalstring.components(separatedBy: "\n")
         var veventFlag = false
-        var veventData = ICalData(dtstamp: "", dtstart: "", dtend: "", location: "", description: "", summary: "", uid: "", transp: "")
+        let initialDate = Date(timeIntervalSince1970: 0) // 1970/1/1
+        var veventData = ICalData(dtstamp: "", dtstart: initialDate, dtend: initialDate, location: "", description: "", summary: "", uid: "", transp: "")
         for line in splitICalString { // iCalデータを1行ずつ探索
             let splittedLine = line.components(separatedBy: ":")
             guard splittedLine.count > 1 else {
@@ -49,9 +50,15 @@ struct ICalResponseParser {
                 case "DTSTAMP":
                     veventData.dtstamp = content
                 case "DTSTART;TZID=Asia/Tokyo":
-                    veventData.dtstart = content
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.timeZone = TimeZone(identifier: "Asia/Tokyo")
+                    dateFormatter.dateFormat = "yyyyMMdd'T'HHmmss"
+                    veventData.dtstart = dateFormatter.date(from: content) ?? initialDate
                 case "DTEND;TZID=Asia/Tokyo":
-                    veventData.dtend = content
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.timeZone = TimeZone(identifier: "Asia/Tokyo")
+                    dateFormatter.dateFormat = "yyyyMMdd'T'HHmmss"
+                    veventData.dtend = dateFormatter.date(from: content) ?? initialDate
                 case "LOCATION":
                     veventData.location = content
                 case "DESCRIPTION":
@@ -64,9 +71,13 @@ struct ICalResponseParser {
                     veventData.transp = content
                 case "END": // VEVENT の終了を検出
                     if content == "VEVENT"{
-                        veventFlag = false
-                        icaldata.append(veventData)
                         
+                        if veventData.dtstamp != "" && veventData.dtstart != initialDate && veventData.dtend != initialDate && veventData.location != "" && veventData.description != "" && veventData.summary != "" && veventData.uid != "" && veventData.transp != "" {
+                            icaldata.append(veventData)
+                        }
+                        
+                        veventFlag = false
+                        veventData = ICalData(dtstamp: "", dtstart: initialDate, dtend: initialDate, location: "", description: "", summary: "", uid: "", transp: "")
                     }
                 default:
                     continue
