@@ -11,6 +11,7 @@ import Combine
 
 struct LectureListView: View {
     @ObservedObject var viewModel = LectureViewModel()
+    @State private var showingModal = false
     
     var body: some View {
         NavigationView {
@@ -22,6 +23,21 @@ struct LectureListView: View {
                         }
                     }
                 }.listRowInsets(EdgeInsets())
+            }
+            .toolbar {
+                Button(action: {
+                    self.showingModal.toggle()
+                }, label: {
+                    Text("設定")
+                })
+                // .sheet(isPresented: $showingModal) {
+//                urlSetting()
+//            }
+            .sheet(isPresented: $showingModal,
+                   onDismiss: { self.viewModel.appear() },
+                   content: { urlSetting() }
+            )
+                
             }
             .navigationBarTitle("スケジュール")
         }
