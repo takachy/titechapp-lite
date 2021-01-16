@@ -16,7 +16,8 @@ class LectureViewModel: ObservableObject {
     
     func appear() {
         cancellable = APIClient().fetch(
-            url: URL(string: "https://ocwi-mock.titech.app/ocwi/index.php?module=Ocwi&action=Webcal&iCalendarId=test")!
+            url: UserDefaults.standard.url(forKey: "OCWi_url")
+                ?? URL(string: "https://ocwi-mock.titech.app/ocwi/index.php?module=Ocwi&action=Webcal&iCalendarId=test")!
         )
         .map {data in
             ScheduleTranslator.traslate(data: ICalResponseParser.parse(data: data))
