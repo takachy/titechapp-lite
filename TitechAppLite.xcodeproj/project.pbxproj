@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D1103CD4257CC7CA008F6ED1 /* urlSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1103CD3257CC7CA008F6ED1 /* urlSetting.swift */; };
+		D1103CD4257CC7CA008F6ED1 /* UrlSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1103CD3257CC7CA008F6ED1 /* UrlSetting.swift */; };
 		D14B1319252852CD0006A30A /* LectureHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14B1318252852CD0006A30A /* LectureHeader.swift */; };
 		D14B132725285A270006A30A /* LectureData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14B132625285A270006A30A /* LectureData.swift */; };
 		D1543657250364860073AC37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1543656250364860073AC37 /* AppDelegate.swift */; };
@@ -24,7 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D1103CD3257CC7CA008F6ED1 /* urlSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = urlSetting.swift; sourceTree = "<group>"; };
+		D1103CD3257CC7CA008F6ED1 /* UrlSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlSetting.swift; sourceTree = "<group>"; };
 		D14B1318252852CD0006A30A /* LectureHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LectureHeader.swift; path = TitechAppLite/View/LectureHeader.swift; sourceTree = SOURCE_ROOT; };
 		D14B132625285A270006A30A /* LectureData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureData.swift; sourceTree = "<group>"; };
 		D1543653250364860073AC37 /* TitechAppLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TitechAppLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,7 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				D154366A250367A90073AC37 /* LectureListView.swift */,
-				D1103CD3257CC7CA008F6ED1 /* urlSetting.swift */,
+				D1103CD3257CC7CA008F6ED1 /* UrlSetting.swift */,
 				D154366F25036C480073AC37 /* LectureRow.swift */,
 				D14B1318252852CD0006A30A /* LectureHeader.swift */,
 			);
@@ -223,7 +223,7 @@
 				D17940802528745200017467 /* LectureViewModel.swift in Sources */,
 				D1543659250364860073AC37 /* SceneDelegate.swift in Sources */,
 				D1D77ECF25723540005A4B53 /* APIClient.swift in Sources */,
-				D1103CD4257CC7CA008F6ED1 /* urlSetting.swift in Sources */,
+				D1103CD4257CC7CA008F6ED1 /* UrlSetting.swift in Sources */,
 				D1D8ACF2253AC064003F4204 /* ICalResponseParser.swift in Sources */,
 				D1C130C32543FE73007D51DC /* ScheduleTranslator.swift in Sources */,
 				D14B132725285A270006A30A /* LectureData.swift in Sources */,

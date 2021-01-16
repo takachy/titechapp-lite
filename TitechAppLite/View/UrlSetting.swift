@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct urlSetting: View {
+struct UrlSetting: View {
     @State private var url = ""
     @State private var isShown = true
     @Environment(\.presentationMode) var presentationMode

@@ -30,9 +30,6 @@ struct LectureListView: View {
                 }, label: {
                     Text("設定")
                 })
-                // .sheet(isPresented: $showingModal) {
-//                urlSetting()
-//            }
             .sheet(isPresented: $showingModal,
                    onDismiss: { self.viewModel.appear() },
                    content: { urlSetting() }
